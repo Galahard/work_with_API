@@ -1,0 +1,30 @@
+
+.status {
+  background-color: #f8f9fa;
+  justify-content: space-around;
+  display: block;
+  text-align: center;
+  width: 95%;
+  height: 100%;
+  border-radius: 5px;
+  padding: 10px;
+
+}
+.statusData{
+  border-radius: 5px;
+  border: dashed crimson;
+  height: 95%;
+}
+
+
+div{
+  width: 95%;
+  height: calc(100% / 3 - 2%);
+  margin: 5px;
+
+}
+
+span {
+  color: red;
+  font-weight: bold;
+}
