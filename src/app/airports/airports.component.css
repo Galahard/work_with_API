@@ -1,0 +1,29 @@
+.airports {
+  background-color: #ffffff;
+  justify-content: space-around;
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  padding: 10px;
+
+}
+
+.airportsData {
+  display: flex;
+  border: dashed crimson;
+  border-radius: 5px;
+  gap: 50px;
+  height: 95%;
+}
+
+span {
+  border-bottom: #020433;
+  color: red;
+  font-weight: bold;
+}
+
+div {
+  margin: 5px;
+}

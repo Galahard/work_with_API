@@ -1,0 +1,12 @@
+.error {
+  margin: 148px 10px 10px 20px;
+  width: 780px;
+  height: 350px;
+  border-radius: 5px;
+  border: dashed crimson;
+  position: fixed;
+  top: 0;
+  background-color: azure;
+  text-align: center;
+
+}

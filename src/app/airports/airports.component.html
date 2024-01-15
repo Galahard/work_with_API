@@ -1,0 +1,54 @@
+<div class="airports ">
+  <div class="airportsData">
+    <div>
+      <div class="AirportInfo">
+        <span>AirportInfo</span>
+        <hr>
+        <div> {{airports.icao}} </div>
+        <div>{{airports.iata}}</div>
+        <div>{{airports.localCode}}</div>
+        <div>{{airports.shortName}}</div>
+        <div>{{airports.fullName}}</div>
+        <div> {{airports.municipalityName}}</div>
+      </div>
+    </div>
+    <div>
+      <div class="location">
+        <span>Location</span>
+        <hr>
+        <div>{{airports.location.lat}}</div>
+        <div>{{airports.location.lon}}</div>
+      </div>
+      <div class="timeZone">
+        <span>TimeZone</span>
+        <hr>
+        <div> {{airports.timeZone}}</div>
+      </div>
+      <div>
+        <div class="country">
+          <span>Country</span>
+          <hr>
+          <div>{{airports.country.code}}</div>
+          <div>{{airports.country.name}}</div>
+        </div>
+        <div class="continent">
+          <span>Continent</span>
+          <hr>
+          <div>{{airports.continent.code}}</div>
+          <div>{{airports.continent.name}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="url">
+      <span>About</span>
+      <hr>
+      <div><a [href]="airports.urls.webSite"> WebSite </a></div>
+      <div><a [href]="airports.urls.wikipedia">Wikipedia</a></div>
+      <div><a [href]="airports.urls.twitter">Twitter</a></div>
+      <div><a [href]="airports.urls.googleMaps">GoogleMaps</a></div>
+      <div><a [href]="airports.urls.flightRadar">FlightRadar</a></div>
+    </div>
+  </div>
+
+
+</div>
