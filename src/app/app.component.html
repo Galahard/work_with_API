@@ -6,33 +6,40 @@
   <div class="container">
 
     <div class="input-group">
-      <div>
-        <input type="text" class="icao" name="icao" placeholder="Input ICAO..."
-
-               [(ngModel)]="icao"
-               (keydown.enter)="getAll(); getAirport()">
+      <div class="indicator"
+           [style.background-color]="loading? 'green':'red'">
       </div>
       <div>
-        <button type="button"
-                (click)="getAll(); getAirport()
+        <input type="text" class="form-control" name="icao" placeholder="Input ICAO..."
+               minlength="4"
+               [(ngModel)]="icao"
+               (keydown.enter)="getSupport(); getAirport()">
+      </div>
+      <div>
+        <button type="submit"
+                [disabled]="icao.length<4"
+                (click)="getSupport(); getAirport()
 
 ">Search
         </button>
       </div>
 
     </div>
-    <div class="data">
+    <div class="data"
+    >
       <app-flights
+        [hidden]="!loading"
         [flights]="flightData"
       ></app-flights>
 
       <app-airports
+        [hidden]="!loading"
         [airports]='airportData'
       ></app-airports>
+
     </div>
+    <app-error [hidden]="loading"
+    ></app-error>
   </div>
 </div>
-<div class="indicator"
-     [style.background-color]="loading? 'green':'red'"
->
-</div>
+

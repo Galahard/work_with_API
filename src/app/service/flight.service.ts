@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders, } from "@angular/common/http";
+import {HttpClient, HttpHeaders,} from "@angular/common/http";
 import {catchError, Observable, throwError} from "rxjs";
-
 
 
 @Injectable({
@@ -24,7 +23,6 @@ export class FlightService {
     });
     return this.http.get<any>('https://aerodatabox.p.rapidapi.com/airports/icao/' + icao,
       {
-
         headers: myHeaders,
       }
     ).pipe(
@@ -38,7 +36,7 @@ export class FlightService {
   }
 
 
-  getAll(icao: string): Observable<any> {
+  getSupport(icao: string): Observable<any> {
 
     let myHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -46,7 +44,7 @@ export class FlightService {
       'X-RapidAPI-Key': '64f85d4acamsh486e5b5f7cbd9b9p1a8bb9jsn42368099c478',
       'X-RapidAPI-Host': 'aerodatabox.p.rapidapi.com'
     });
-    return this.http.get<any>('https://aerodatabox.p.rapidapi.com/health/services/airports/'+icao+'/feeds',
+    return this.http.get<any>('https://aerodatabox.p.rapidapi.com/health/services/airports/' + icao + '/feeds',
       {
 
         headers: myHeaders,

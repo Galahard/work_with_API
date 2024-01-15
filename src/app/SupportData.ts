@@ -1,7 +1,7 @@
 export interface SupportData {
 
 
- adsbUpdatesFeed: {
+  adsbUpdatesFeed: {
     service: string;
     status: string;
   },

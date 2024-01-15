@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SupportData} from "./SupportData";
 
 import {FlightService} from "./service/flight.service";
 import {Airport} from "./data/Airport";
+import {FormControl, Validators} from "@angular/forms";
 
 
 @Component({
@@ -12,21 +13,21 @@ import {Airport} from "./data/Airport";
 })
 export class AppComponent implements OnInit {
   title = 'Flights Schedule';
-  icao : string = "KLAX";
-  flightData: SupportData ;
+  icao: string = "";
+  flightData: SupportData;
   airportData: Airport;
-  loading: boolean= true;
+  loading: boolean = true;
   errorMessage: string;
 
   constructor(private flightsService: FlightService) {
   }
 
-  getAll(){
-    this.flightsService.getAll(this.icao).subscribe(flights=>{
-      this.flightData=flights
-      this.loading= true;
-      console.log(this.icao)
-    },
+  getSupport() {
+    this.flightsService.getSupport(this.icao).subscribe(flights => {
+        this.flightData = flights
+        this.loading = true;
+        console.log(this.icao)
+      },
       (error) => {
         console.error('error caught in component')
         this.errorMessage = error;
@@ -35,10 +36,11 @@ export class AppComponent implements OnInit {
 
       })
   }
-  getAirport(){
-    this.flightsService.getAirport(this.icao).subscribe(airports=>{
-        this.airportData=airports
-        this.loading= true;
+
+  getAirport() {
+    this.flightsService.getAirport(this.icao).subscribe(airports => {
+        this.airportData = airports
+        this.loading = true;
         console.log(this.icao)
       },
       (error) => {
@@ -51,15 +53,17 @@ export class AppComponent implements OnInit {
   }
 
 
-
-
   ngOnInit(): void {
-    this.getAll();
+    icao: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4)])
+
+
+    this.getSupport();
     this.getAirport();
+
+
   }
-
-
-
 
 
 }

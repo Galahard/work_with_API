@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {SupportData} from "../SupportData";
-
 
 
 @Component({
@@ -10,11 +9,9 @@ import {SupportData} from "../SupportData";
 })
 
 
+export class FlightsComponent {
 
-
-export class FlightsComponent  {
-
-@Input() flights:SupportData
+  @Input() flights: SupportData
 
 }
 
